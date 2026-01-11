@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lista de Presentes de Casamento</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Lista de Presentes de Casamento</h1>
+      <p class="subtitle">Escolha um presente simbólico — o valor será enviado via Pix para <strong>kaiquedutramartinez@hotmail.com</strong>.</p>
+    </div>
+  </header>
+  <main class="container">
+    <section id="gift-list" class="gift-grid" aria-label="Lista de presentes"></section>
+    <p class="disclaimer"><strong>Atenção:</strong> Os itens são ilustrativos. Ao clicar em "Presentear", será exibido um <em>Pix Copia e Cola</em> e um QR Code com o valor do presente, direcionando o pagamento para a chave Pix informada.</p>
+  </main>
+  <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Fechar" onclick="closeModal()">×</button>
+      <h2 id="modalTitle">Detalhes do presente</h2>
+      <div id="modalBody" class="modal-body">
+        <div class="gift-summary">
+          <img id="giftImage" alt="Imagem do presente" />
+          <div>
+            <h3 id="giftName"></h3>
+            <p id="giftPrice"></p>
+          </div>
+        </div>
+        <div class="pix-box">
+          <h3>Pagamento via Pix</h3>
+          <p class="help">Use o <strong>Pix Copia e Cola</strong> abaixo no seu app do banco ou escaneie o QR Code.</p>
+          <label for="pixCode">Pix Copia e Cola</label>
+          <textarea id="pixCode" readonly rows="6"></textarea>
+          <div class="actions">
+            <button id="copyBtn" class="btn" onclick="copyPix()">Copiar código</button>
+            <a id="shareBtn" class="btn btn-secondary" target="_blank" rel="noopener">Compartilhar</a>
+          </div>
+          <div class="qr">
+            <img id="qrImage" alt="QR Code do Pix" />
+            <p class="qr-hint">Se o QR não carregar, use o código acima (Copia e Cola).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="site-footer"><div class="container"><small>Este site utiliza o padrão <abbr title="BR Code">BR Code</abbr> para Pix. Pix é um sistema do Banco Central do Brasil.</small></div></footer>
+  <script src="script.js"></script>
+</body>
+</html>
